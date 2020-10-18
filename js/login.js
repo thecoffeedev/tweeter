@@ -30,11 +30,18 @@ note.classList.add("alert", "alert-warning");
 note.innerHTML = "<strong> Note : </strong> Your authentication with Twitter is safe and we don't take your credentials.<br>Your data is fetched through twitter API.";
 cont.appendChild(note);
 
+let note2 = document.createElement("div");
+note2.setAttribute("role", "alert");
+note2.classList.add("alert", "alert-danger");
+note2.innerHTML = "<strong> Note : </strong> Due to some API issues you will not be logged in.";
+cont.appendChild(note2);
+
 let button = document.createElement("button");
 button.type = "button";
 button.classList.add("btn", "btn-primary", "btn-lg", "btn-block", "mt-4", "mb-3");
 button.innerHTML = "Login with Twitter";
 button.style.borderRadius = "50px";
+button.onclick = function() {redirect()}//{requestToken("https://twitter-clone-tweet.netlify.app/main.html")}
 cont.append(button);
 
 let createAccount = document.createElement("p");
